@@ -8,6 +8,7 @@ start node Root
   do
   {
     #connect($endpoint);
+    #waitForSpeech(1000);
     #sayText("Hello! My name is Dasha! Can you hear me?.");
     wait *;
   }
@@ -21,39 +22,55 @@ start node Root
 node Can_hear_you {
   do
   {
-    #sayText("Great! Let's get started.");
+    #sayText("Awesome!! Shall we get started?");
     wait *;
   }
 
   transitions
   {
-    next: goto Next on true;
+    yes: goto Yes on true;
+  }
+}
+
+node Yes {
+  do
+  {
+    #sayText("Great! I'll record the talk!!.");
+    wait *;
+  }
+
+  transitions
+  {
+    next: goto Next on #messageHasIntent("ok");
   }
 }
 
 node Next {
   do
   {
+    #waitForSpeech(1000);
     #sayText("You said " + #getMessageText());
     wait *;
   }
 
   transitions
   {
-    next: goto Next on true;
-    bye_bye: goto bye_bye on false;
+    next: goto Next on #messageHasIntent("next");
+    
+    bye_bye: goto bye_bye on #messageHasIntent("bye");
   }
 }
 
 node bye_bye {
     do {
-        #sayText("No worries mate.Let's connect sometime else Cheers!");
+        #waitForSpeech(1000);
+        #sayText("No worries mate. Let's connect sometime else. Cheers!");
         #disconnect();
         exit;
     }
 }
 
-digression bye {
+digression hangup {
     conditions { on true tags: onclosed; }
     do {
         #sayText("Thanks for your call. Have a nice day. Bye!");

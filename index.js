@@ -62,12 +62,12 @@ async function main() {
     if (message.author === discordClient.user) return;
 
     if (message.channel === message.author.dmChannel || message.mentions.has(discordClient.user)) {
-      message.reply("Use the `/dasha start` command in any text channel to start a convo.");
+      message.reply("Use the `hey dasha` command in any text channel to start a convo.");
       return;
     }
 
-    if (message.content === "/dasha start") {
-      log.info("got a /dasha start command");
+    if (message.content === "hey dasha") {
+      log.info("got a hey dasha command");
 
       if (!message.guild) {
         await message.reply("Voice only works in guilds.");
@@ -103,7 +103,7 @@ async function main() {
     }
   });
 
-  log.info("waiting for a /dasha start");
+  log.info("waiting for a hey dasha");
 }
 
 main().catch(log.error);
