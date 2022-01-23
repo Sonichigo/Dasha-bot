@@ -9,6 +9,9 @@
     ],
     "language": "en-US"
   },
+  "customIntents": {
+    "file": "intents.json"
+  },
   "nlg": {
     "type": "phrases",
     "file": "phrasemap.json",

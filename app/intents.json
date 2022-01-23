@@ -1,0 +1,56 @@
+{
+    "version": "v1",
+    "intents": 
+    {
+      "yes": 
+      {
+        "includes": [
+          "yes",
+          "correct",
+          "sure",
+          "absolutely",
+          "yes siree bob",
+          "right",
+          "yep",
+          "you got it",
+          "I would",
+          "yeah",
+          "that's right", 
+          "I would"
+        ],
+        "excludes": [
+          "fuck off"
+        ]
+      },
+      "no": {
+        "includes": [
+          "no",
+          "definitely not",
+          "wrong",
+          "incorrect",
+          "I do not",
+          "I don't",
+          "I would not",
+          "I wouldn't"
+        ],
+        "excludes": [
+          "no, I want a delivery",
+          "no, I want it delivered"
+        ]
+      },
+  
+      "bye": {
+        "includes": [
+          "bye bye",
+          "good bye",
+          "thanks bye",
+          "nevermind",
+          "forget about it",
+          "we're done",
+          "take it easy",
+          "peace out boo",
+          "peace"
+        ]
+      }
+    }
+}
