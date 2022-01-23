@@ -1,5 +1,5 @@
 {
-    "version": "v2",
+    "version": "v1",
     "intents": 
     {
       "yes": 
@@ -41,7 +41,7 @@
   
       "bye": {
         "includes": [
-          "bye",
+          "bye bye",
           "good bye",
           "thanks bye",
           "nevermind",
@@ -50,13 +50,6 @@
           "take it easy",
           "peace out boo",
           "peace"
-        ]
-      },
-      "next": {
-        "includes": [
-          "sure",
-          "why not",
-          "repeat"
         ]
       }
     }

@@ -41,7 +41,7 @@ node Yes {
 
   transitions
   {
-    next: goto Next on #messageHasIntent("ok");
+    next: goto Next on true;
   }
 }
 
@@ -55,8 +55,7 @@ node Next {
 
   transitions
   {
-    next: goto Next on #messageHasIntent("next");
-    
+    next: goto Next on #messageHasIntent("repeat");
     bye_bye: goto bye_bye on #messageHasIntent("bye");
   }
 }
@@ -71,7 +70,9 @@ node bye_bye {
 }
 
 digression hangup {
-    conditions { on true tags: onclosed; }
+    conditions { 
+      on true tags: onclosed; 
+      }
     do {
         #sayText("Thanks for your call. Have a nice day. Bye!");
         exit;
