@@ -4,10 +4,13 @@ This is an example of a Discord bot built using [Discord.js], [Dasha.AI SDK] and
 [dasha.ai sdk]: https://npmjs.com/package/@dasha.ai/sdk
 [discord adapter library]: https://npmjs.com/package/@dasha.ai/discord
 
+---
+
 If on Windows, ensure that you have set up the [development environment].
 
 [development environment]: https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#environment-setup-and-configuration
 
+---
 To run this example, you first need to [create a bot] and [add it to a server].
 
 [create a bot]: https://discordjs.guide/preparations/setting-up-a-bot-application.html
