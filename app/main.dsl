@@ -49,7 +49,7 @@ node Next {
   do
   {
     #waitForSpeech(1000);
-    #sayText("You said " + #getMessageText());
+    #sayText(#getMessageText());
     wait *;
   }
 
